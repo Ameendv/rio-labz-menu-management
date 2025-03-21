@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const permissionSchema = new mongoose.Schema(
     {
-        name: { type: String, required: true, unique: true }, // Example: 'edit_posts', 'view_reports'
+        name: { type: String, required: true, unique: true }, 
       },
     { timestamps: true }
 );

@@ -4,6 +4,7 @@ const { getProfile, updateProfile, getUserProfiles } = require('../services/prof
 const authUser = require('../middlewares/authUser');
 const authorize = require('../middlewares/authorize');
 
+//user can edit their profile
 router.get('/:user_id', authUser, async(req, res, next) => {
     try {
         const response = await getProfile(req.params.user_id);
@@ -14,6 +15,7 @@ router.get('/:user_id', authUser, async(req, res, next) => {
 }
 );
 
+//only admin can view all users profile
 router.get('/', authUser, authorize('user-profile', 'view'), async(req, res, next) => {
     try {
         const response = await getUserProfiles(req.params.user_id);
@@ -24,6 +26,7 @@ router.get('/', authUser, authorize('user-profile', 'view'), async(req, res, nex
 }
 );
 
+//user can update their profile
 router.put('/:user_id', authUser, async(req, res, next) => {
     try {
         const response = await updateProfile(req.params.user_id, req.body);

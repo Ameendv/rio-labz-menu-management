@@ -4,6 +4,7 @@ const { createCategory } = require('../services/category.service');
 const authUser = require('../middlewares/authUser');
 const authorize = require('../middlewares/authorize');
 
+//only admin can add/edit category
 router.post('/', authUser, authorize('category', 'edit'), async (req, res, next) => {
     try {
         const { category, parent_category_id, } = req.body

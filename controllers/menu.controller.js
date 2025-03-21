@@ -4,6 +4,7 @@ const authUser = require('../middlewares/authUser');
 const authorize = require('../middlewares/authorize');
 const router = express.Router();
 
+//only admin can add/edit menu
 router.post('/', authUser, authorize('menu', 'edit'), async (req, res, next) => {
     try {
         const { category_id, food_name, price, description } = req.body
@@ -25,6 +26,7 @@ router.get('/', authUser, async (req, res, next) => {
 }
 );
 
+//only admin can update menu
 router.put('/:menu_id', authUser, authorize('menu', 'edit'), async (req, res, next) => {
     try {
 

@@ -29,6 +29,7 @@ router.post('/login', userLoginSchema, async (req, res, next) => {
     }
 });
 
+//only admin can allocate role to a user
 router.put('/allocate-role', authUser, authorize('role-allocate', 'edit'), async (req, res, next) => {
     try {
         const { role_id, user_id } = req.body
