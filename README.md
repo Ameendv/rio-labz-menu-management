@@ -5,7 +5,8 @@ A **Node.js** application with **MongoDB** for managing a **food menu**, with ro
 ## Features  
 ✅ **Admin Functionalities:**  
 - Login using pre-added credentials.  
-- Add, edit, and manage **categories** and **menu items**.  
+- Add, edit, and manage **categories** and **menu items**.
+- Nested level sub categories can be added
 - View all users and change their roles (make a user an admin).  
 
 ✅ **User Functionalities:**  
